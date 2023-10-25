@@ -5,9 +5,9 @@ spring:
     name: urotaxi
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://#dbhost#/urotaxidb
-    username: #dbusername#
-    password: #dbpassword#
+    url: jdbc:mysql://#dbHost#/urotaxidb
+    username: #dbUsername#
+    password: #dbPassword#
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
