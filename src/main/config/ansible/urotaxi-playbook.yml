@@ -53,7 +53,7 @@
         target: ../db/urotaxidb.sql
         login_user: "{{ lookup('env','UROTAXI_DB_USR') }}"
         login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
-        login_host: ./dbHosts     #"{{ lookup('env','DB_HOST') }}"
+        login_host: ../../../../dbHosts     #"{{ lookup('env','DB_HOST') }}"
     - name: Deploy        
       copy: 
         src: target/urotaxi.war
