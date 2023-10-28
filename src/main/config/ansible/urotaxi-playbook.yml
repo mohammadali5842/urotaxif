@@ -35,6 +35,7 @@
       package:
         name: python3-pymysql
         state: present
+        update_cache: yes
       become: yes
       become_method: sudo  
     - name: tomcat service
