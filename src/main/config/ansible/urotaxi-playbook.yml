@@ -31,6 +31,12 @@
     - name: find jdk
       shell: readlink -f $(which java) | sed 's/bin*.//g'
       register: JAVA_HOME
+    - name: Install PyMySQL
+      package:
+        name: python3-PyMySQL
+        state: present
+      become: yes
+      become_method: sudo  
     - name: tomcat service
       template:
         src: tomcat.service.j2
