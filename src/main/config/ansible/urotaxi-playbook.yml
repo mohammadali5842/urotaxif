@@ -7,7 +7,7 @@
       apt: 
         name: openjdk-11-jdk
         state: present
-        update_cashe: yes
+        update_cache: yes
       become: yes
       become_method: sudo
     - name: create directory middleware
