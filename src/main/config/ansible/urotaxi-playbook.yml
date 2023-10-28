@@ -64,13 +64,14 @@
     - name: tomcatreload
       service:
         name: tomcat
-        state: reload
+        state: reloaded
+        enable: yes
       become: yes
       become_method: sudo
     - name: tomcatrestart
       service:
         name: tomcat restart
-        state: restart
+        state: restarted
       become: yes
       become_method: sudo
 
