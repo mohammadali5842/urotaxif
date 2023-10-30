@@ -77,7 +77,7 @@
     - name: tomcatreload
       service:
         name: tomcat
-        state: reloaded
+        state: daemon-reload
         enabled: yes
       become: yes
       become_method: sudo
