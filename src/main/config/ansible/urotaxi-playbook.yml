@@ -29,7 +29,7 @@
         dest: /u01/middleware/
         remote_src: true
     - name: find jdk
-      shell: readlink -f $(which java) | sed 's/bin*.//g'
+      shell: readlink -f $(which java) | sed 's/bin.*//g'
       register: JAVA_HOME
     - name: Install PyMySQL
       package:
