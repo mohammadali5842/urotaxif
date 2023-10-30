@@ -41,7 +41,9 @@
     - name: install mysql client
       apt:
         name: mysql-client-8.0
-        state: present  
+        state: present
+      become: yes
+      become_method: sudo    
     - name: tomcat service
       template:
         src: tomcat.service.j2
