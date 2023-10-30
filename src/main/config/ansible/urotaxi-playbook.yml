@@ -46,6 +46,11 @@
       become_method: sudo
       notify:
         - tomcatreload
+    - name: copy db schema
+      copy:
+        src: src/main/db/urotaxidb.sql
+        dest: /tmp/
+
     - name: create schema
       community.mysql.mysql_db:
         name: all
