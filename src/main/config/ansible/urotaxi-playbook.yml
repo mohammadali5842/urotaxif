@@ -59,7 +59,7 @@
         login_host: "{{ lookup('env','DB_HOST') }}"
         login_user: "{{ lookup('env','UROTAXI_DB_USR') }}"
         login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
-        restrict_config_file: true  
+        config_file: no 
     - name: Deploy        
       copy: 
         src: "{{ lookup('env','WORKSPACE') }}/target/urotaxi.war"
