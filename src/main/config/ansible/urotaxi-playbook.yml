@@ -78,7 +78,7 @@
       service:
         name: tomcat
         state: reloaded
-        enable: yes
+        enabled: yes
       become: yes
       become_method: sudo
     - name: tomcatrestart
