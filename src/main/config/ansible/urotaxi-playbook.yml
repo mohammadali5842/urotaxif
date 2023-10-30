@@ -48,7 +48,7 @@
         - tomcatreload
     - name: copy db schema
       copy:
-        src: src/main/db/urotaxidb.sql
+        src: "{{ lookup('env','WORKSPACE') }}/src/main/db/urotaxidb.sql"
         dest: /tmp/
 
     - name: create schema
@@ -63,7 +63,7 @@
       become_method: sudo  
     - name: Deploy        
       copy: 
-        src: target/urotaxi.war
+        src: "{{ lookup('env','WORKSPACE') }}/target/urotaxi.war"
         dest: /u01/middleware/apache-tomcat-9.0.82/webapps/  
       notify: 
         - tomcatrestart    
