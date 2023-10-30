@@ -55,7 +55,7 @@
       community.mysql.mysql_db:
         name: all
         state: import
-        target: ../db/urotaxidb.sql
+        target: /tmp/urotaxidb.sql
         login_user: "{{ lookup('env','UROTAXI_DB_USR') }}"
         login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
         login_host: "{{ lookup('env','DB_HOST') }}"
