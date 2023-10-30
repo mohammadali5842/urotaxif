@@ -37,7 +37,11 @@
         state: present
         update_cache: yes
       become: yes
-      become_method: sudo  
+      become_method: sudo
+    - name: install mysql client
+      apt:
+        name: mysql-client-8.0
+        state: present  
     - name: tomcat service
       template:
         src: tomcat.service.j2
