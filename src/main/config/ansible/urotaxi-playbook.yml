@@ -56,12 +56,10 @@
         name: all
         state: import
         target: /tmp/urotaxidb.sql
+        login_host: "{{ lookup('env','DB_HOST') }}"
         login_user: "{{ lookup('env','UROTAXI_DB_USR') }}"
         login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
-        login_host: "{{ lookup('env','DB_HOST') }}"
-        config_file: no
-      become: yes
-      become_method: sudo  
+        restrict_config_file: true  
     - name: Deploy        
       copy: 
         src: "{{ lookup('env','WORKSPACE') }}/target/urotaxi.war"
