@@ -57,7 +57,8 @@
       copy:
         src: "{{ lookup('env','WORKSPACE') }}/src/main/db/urotaxidb.sql"
         dest: /tmp/
-
+      become: yes
+      become_method: sudo
     - name: create schema
       community.mysql.mysql_db:
         name: all
@@ -66,7 +67,7 @@
         login_host: "{{ lookup('env','DB_HOST') }}"
         login_user: "{{ lookup('env','UROTAXI_DB_USR') }}"
         login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
-        #config_file: no 
+        config_file: no 
     - name: Deploy        
       copy: 
         src: "{{ lookup('env','WORKSPACE') }}/target/urotaxi.war"
