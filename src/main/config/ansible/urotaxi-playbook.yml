@@ -84,7 +84,7 @@
       become_method: sudo
     - name: tomcatrestart
       service:
-        name: tomcat restart
+        name: tomcat
         state: restarted
       become: yes
       become_method: sudo
